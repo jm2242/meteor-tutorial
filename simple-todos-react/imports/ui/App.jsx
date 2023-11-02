@@ -11,15 +11,17 @@ export class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {hasLoggedIn: false};
+    this.state = {hasLoggedIn: false, credential: ""};
   }
 
   render() {
   return <div>
       <h1>Hotel Mares</h1>
       <h2>Web Provisioning Demo</h2>
+
+      <h3>Sign in to Add to Wallet</h3>
       <GoogleOAuthProvider clientId={clientId}>
-            <SignInWithGoogle onSuccess={() => this.setState({ hasLoggedIn: true }) }  />
+            <SignInWithGoogle onSuccess={(credential) => this.setState({ hasLoggedIn: true, credential }) }  />
           </GoogleOAuthProvider>
 
       {this.state.hasLoggedIn && <AddToWallet />}

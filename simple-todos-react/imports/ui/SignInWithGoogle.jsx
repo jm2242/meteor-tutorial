@@ -13,7 +13,7 @@ export const SignInWithGoogle = (props) => {
     <GoogleLogin 
         onSuccess={credentialResponse => {
           console.log(credentialResponse);
-          props.onSuccess();
+          props.onSuccess(credentialResponse.credential);
         }}
         onError={() => {
           console.log('Login Failed');
