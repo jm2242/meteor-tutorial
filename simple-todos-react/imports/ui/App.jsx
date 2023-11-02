@@ -13,10 +13,11 @@ export class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {hasLoggedIn: false, credential: "", saveLinkUrl: ""};
+    this.state = {hasLoggedIn: false, credential: "", saveLinkUrl: "", isLoading: false};
   }
 
   onLoginSuccess = (credential) => {
+    this.setState({ isLoading: true });
     Meteor.call("generateSaveLink", credential, (err, saveLinkUrl)=> {
       if (err) {
         console.log("Error: " + err);
@@ -25,6 +26,7 @@ export class App extends React.Component {
         this.setState({ credential, saveLinkUrl });
         this.setState({ hasLoggedIn: true });
       }
+      this.setState({ isLoading: false });
     });
   }
 
@@ -39,7 +41,7 @@ export class App extends React.Component {
           </GoogleOAuthProvider>
 
       {this.state.hasLoggedIn && <AddToWallet saveLinkUrl={this.state.saveLinkUrl || ""} />}
-      
+      {this.state.isLoading && <div>Loading...</div>}
 
       {/* <Hello/> */}
       {/* <Info/> */}
