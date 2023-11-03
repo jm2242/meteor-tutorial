@@ -37,7 +37,7 @@ export default class SeparateButtonProvisioning extends React.Component {
             )
           }
     
-          {this.state.hasLoggedIn && <AddToWallet saveLinkUrl={this.state.saveLinkUrl || ""} />}
+          {this.state.hasLoggedIn && !this.state.isLoading && <AddToWallet saveLinkUrl={this.state.saveLinkUrl || ""} />}
           {this.state.isLoading && <div>Loading...</div>}
         </div>
       }

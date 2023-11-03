@@ -22,7 +22,7 @@ const RedirectToWallet = () => {
           });
     })
     return (
-        <div>Redirecting to you to Wallet...</div>
+        <div>Redirecting you to Wallet...</div>
     )
 }
 
