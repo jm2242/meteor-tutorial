@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import SaveToGooglePayButton from '@google-pay/save-button-react';
+
 
 const AddToWallet = ({saveLinkUrl}) =>(
     <AddToWalletSection>
@@ -11,6 +13,12 @@ const AddToWallet = ({saveLinkUrl}) =>(
         {saveLinkUrl && `Save Link from server: ${saveLinkUrl}`}
         </div>
     </AddToWalletSection>
+    
+    // This component currently only works for Valuables:
+    // <div>
+    //     {saveLinkUrl && <SaveToGooglePayButton jwt={saveLinkUrl} />}
+
+    // </div>
 
 );
 

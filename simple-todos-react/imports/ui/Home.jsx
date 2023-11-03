@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SeparateButtonProvisioning from './SeparateButtonProvisioning.jsx';
 import CombinedButtonProvisioning from './CombinedButtonProvisioning.jsx';
 import { useState } from 'react';
@@ -34,7 +34,8 @@ const Home = () => {
       </div>
       {isSeparateButtonProvisioning && <SeparateButtonProvisioning />}
       {!isSeparateButtonProvisioning && <CombinedButtonProvisioning />}
-    </div>
+
+      </div>
 
   )
   }
