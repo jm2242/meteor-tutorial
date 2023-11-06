@@ -11,7 +11,6 @@ export default class SeparateButtonProvisioning extends React.Component {
         super(props);
         this.state = {hasLoggedIn: false, credential: "", saveLinkUrl: "", isLoading: false};
       }
-    
       onLoginSuccess = (credential) => {
         this.setState({ isLoading: true });
         Meteor.call("generateSaveLink", credential, (err, saveLinkUrl)=> {
@@ -36,7 +35,6 @@ export default class SeparateButtonProvisioning extends React.Component {
               </div>
             )
           }
-    
           {this.state.hasLoggedIn && !this.state.isLoading && <AddToWallet saveLinkUrl={this.state.saveLinkUrl || ""} />}
           {this.state.isLoading && <div>Loading...</div>}
         </div>

@@ -34,7 +34,6 @@ const Home = () => {
       </div>
       {isSeparateButtonProvisioning && <SeparateButtonProvisioning />}
       {!isSeparateButtonProvisioning && <CombinedButtonProvisioning />}
-
       </div>
 
   )
