@@ -12,13 +12,13 @@ import {
 
 const Home = () => {
 
-  const [isSeparateButtonProvisioning, setButtonMode] = useState(true);
+  const [isSeparateButtonProvisioning, setButtonMode] = useState(false);
 
   return (
     <div>
       <h1>Hotel Mares</h1>
       <h2>Web Provisioning Demo</h2>
-      <div className="pure-button-group" role="group" aria-label="...">
+      {/* <div className="pure-button-group" role="group" aria-label="...">
         <button 
           className="pure-button" 
           onClick={() => setButtonMode(true)}
@@ -31,7 +31,7 @@ const Home = () => {
         > 
           Using a combined button
         </button>
-      </div>
+      </div> */}
       {isSeparateButtonProvisioning && <SeparateButtonProvisioning />}
       {!isSeparateButtonProvisioning && <CombinedButtonProvisioning />}
       </div>

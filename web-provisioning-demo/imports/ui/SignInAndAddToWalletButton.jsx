@@ -3,7 +3,7 @@ import React from 'react';
 const SignInAndAddToWalletButton = ({signInUrl}) =>(
     <div>
         <a className="pure-button" href={`${signInUrl}`}>
-        <img src="https://drive.google.com/uc?export=view&id=1Ca1V_cZcYX32BSYUD6RLkYDVSxNVCBlh"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Add_to_Google_Wallet_badge.svg"/>
         </a>
         <div>
         {/* {saveLinkUrl && `Save Link from server: ${saveLinkUrl}`} */}

@@ -18,6 +18,8 @@ export const SignInWithGoogle = (props) => {
         onError={() => {
           console.log('Login Failed');
         }}
+        ux_mode="redirect"
+        redirect_uri="http://localhost:3000/redirect"
       />
 );
 };
